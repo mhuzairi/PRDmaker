@@ -1,0 +1,287 @@
+.prd-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.prd-viewer {
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 90vw;
+  max-width: 1000px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.prd-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+  background: #222;
+  border-radius: 12px 12px 0 0;
+}
+
+.prd-viewer-title h2 {
+  margin: 0 0 8px 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.prd-viewer-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.prd-version {
+  background: #4CAF50;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.prd-date {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.prd-source {
+  background: #2196F3;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.prd-viewer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.prd-viewer-btn {
+  background: #333;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.prd-viewer-btn:hover {
+  background: #444;
+  border-color: #666;
+}
+
+.prd-viewer-btn.edit {
+  background: #FF9800;
+  border-color: #FF9800;
+}
+
+.prd-viewer-btn.edit:hover {
+  background: #F57C00;
+}
+
+.prd-viewer-btn.close {
+  background: #f44336;
+  border-color: #f44336;
+}
+
+.prd-viewer-btn.close:hover {
+  background: #d32f2f;
+}
+
+.prd-viewer-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.prd-markdown-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #1a1a1a;
+}
+
+.prd-markdown-content pre {
+  margin: 0;
+  color: #e0e0e0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.prd-editor {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.prd-editor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prd-editor-section label {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.prd-changes-input {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.prd-changes-input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.prd-content-editor {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: 300px;
+  flex: 1;
+}
+
+.prd-content-editor:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.prd-editor-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #333;
+}
+
+.prd-editor-btn {
+  background: #333;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.prd-editor-btn:hover {
+  background: #444;
+}
+
+.prd-editor-btn.save {
+  background: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.prd-editor-btn.save:hover {
+  background: #45a049;
+}
+
+.prd-editor-btn.save:disabled {
+  background: #666;
+  border-color: #666;
+  cursor: not-allowed;
+}
+
+.prd-editor-btn.cancel {
+  background: #666;
+  border-color: #666;
+}
+
+.prd-editor-btn.cancel:hover {
+  background: #777;
+}
+
+/* Scrollbar styling */
+.prd-viewer-content::-webkit-scrollbar,
+.prd-markdown-content::-webkit-scrollbar,
+.prd-editor::-webkit-scrollbar {
+  width: 8px;
+}
+
+.prd-viewer-content::-webkit-scrollbar-track,
+.prd-markdown-content::-webkit-scrollbar-track,
+.prd-editor::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.prd-viewer-content::-webkit-scrollbar-thumb,
+.prd-markdown-content::-webkit-scrollbar-thumb,
+.prd-editor::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.prd-viewer-content::-webkit-scrollbar-thumb:hover,
+.prd-markdown-content::-webkit-scrollbar-thumb:hover,
+.prd-editor::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .prd-viewer {
+    width: 95vw;
+    height: 90vh;
+  }
+  
+  .prd-viewer-header {
+    padding: 16px;
+  }
+  
+  .prd-viewer-meta {
+    gap: 8px;
+  }
+  
+  .prd-viewer-title h2 {
+    font-size: 1.3rem;
+  }
+  
+  .prd-markdown-content,
+  .prd-editor {
+    padding: 16px;
+  }
+}

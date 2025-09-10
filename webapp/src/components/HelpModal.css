@@ -1,0 +1,330 @@
+/* Help Modal Overlay */
+.help-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+/* Help Modal */
+.help-modal {
+  background: #2d2d2d;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid #404040;
+}
+
+/* Modal Header */
+.help-modal-header {
+  background: #3a3a3a;
+  padding: 12px 16px;
+  border-bottom: 1px solid #404040;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.help-modal-header h2 {
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #555;
+  color: #e0e0e0;
+}
+
+/* Modal Content */
+.help-modal-content {
+  padding: 16px 16px 40px 16px;
+  max-height: calc(80vh - 80px);
+  overflow-y: auto;
+}
+
+/* Hotkeys List */
+.hotkeys-list {
+  margin-bottom: 20px;
+}
+
+.hotkey-item {
+  background: #3a3a3a;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.hotkey-item:hover {
+  border-color: #555;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hotkey Display */
+.hotkey-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+}
+
+.hotkey-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.hotkey-action {
+  color: #e0e0e0;
+  font-weight: 600;
+  min-width: 120px;
+  font-size: 14px;
+}
+
+.hotkey-key {
+  background: #555;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+  border: 1px solid #666;
+}
+
+.hotkey-description {
+  color: #b0b0b0;
+  font-size: 13px;
+  flex: 1;
+}
+
+.hotkey-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn, .remove-btn {
+  background: none;
+  border: 1px solid #555;
+  color: #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #007AFF;
+  border-color: #007AFF;
+  color: white;
+}
+
+.remove-btn:hover {
+  background: #ff4444;
+  border-color: #ff4444;
+  color: white;
+}
+
+/* Hotkey Edit Form */
+.hotkey-edit-form {
+  padding: 16px;
+  background: #404040;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hotkey-input {
+  background: #555;
+  border: 1px solid #666;
+  color: #e0e0e0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.hotkey-input:focus {
+  border-color: #007AFF;
+}
+
+.hotkey-input::placeholder {
+  color: #888;
+}
+
+/* Key Input Container */
+.key-input-container {
+  position: relative;
+}
+
+.key-input {
+  cursor: pointer;
+  user-select: none;
+}
+
+.key-input.recording {
+  border-color: #ff8c00;
+  background: #4a3a00;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.recording-indicator {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff8c00;
+  font-size: 12px;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* Hotkey Actions */
+.hotkey-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.save-btn, .cancel-btn, .add-btn {
+  background: none;
+  border: 1px solid #555;
+  color: #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.save-btn, .add-btn {
+  background: #007AFF;
+  border-color: #007AFF;
+  color: white;
+}
+
+.save-btn:hover, .add-btn:hover {
+  background: #0056CC;
+  border-color: #0056CC;
+}
+
+.cancel-btn:hover {
+  background: #555;
+  border-color: #666;
+}
+
+/* Add Hotkey Section */
+.add-hotkey-section {
+  border-top: 1px solid #404040;
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+
+.add-hotkey-section h3 {
+  color: #e0e0e0;
+  font-size: 16px;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+/* Modal Footer */
+.modal-footer {
+  border-top: 1px solid #404040;
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid #ff8c00;
+  color: #ff8c00;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  background: #ff8c00;
+  color: white;
+}
+
+/* Scrollbar Styling */
+.help-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.help-modal-content::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.help-modal-content::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.help-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .help-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .hotkey-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .hotkey-display {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .hotkey-controls {
+    justify-content: flex-end;
+  }
+}

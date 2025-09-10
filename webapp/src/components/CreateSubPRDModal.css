@@ -1,0 +1,302 @@
+/* Create Sub-PRD Modal Styles */
+.create-sub-prd-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  backdrop-filter: blur(4px);
+}
+
+.create-sub-prd-modal {
+  background: #2d2d2d;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid #404040;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.create-sub-prd-header {
+  background: #3a3a3a;
+  padding: 16px 20px;
+  border-bottom: 1px solid #404040;
+}
+
+.create-sub-prd-header h3 {
+  margin: 0 0 8px 0;
+  color: #e0e0e0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.parent-prd-info {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.create-sub-prd-form {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 12px;
+  color: #e0e0e0;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4a9eff;
+  box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.2);
+}
+
+.form-group input::placeholder {
+  color: #666;
+}
+
+.features-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.select-all-btn {
+  background: #404040;
+  border: none;
+  color: #e0e0e0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.select-all-btn:hover {
+  background: #505050;
+}
+
+.no-features {
+  background: #1a1a1a;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+}
+
+.no-features p {
+  margin: 0 0 8px 0;
+  color: #888;
+}
+
+.no-features .hint {
+  font-size: 12px;
+  color: #666;
+}
+
+.features-list {
+  background: #1a1a1a;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.feature-item {
+  border-bottom: 1px solid #333;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-checkbox {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.feature-checkbox:hover {
+  background: #2a2a2a;
+}
+
+.feature-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #404040;
+  border-radius: 3px;
+  margin-right: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.feature-checkbox input[type="checkbox"]:checked + .checkmark {
+  background: #4a9eff;
+  border-color: #4a9eff;
+}
+
+.feature-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.feature-description {
+  color: #888;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.selection-summary {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  color: #888;
+  font-size: 12px;
+  text-align: center;
+}
+
+.sub-prd-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #404040;
+  margin-top: 20px;
+}
+
+.cancel-btn,
+.create-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.cancel-btn {
+  background: #404040;
+  color: #e0e0e0;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #505050;
+}
+
+.create-btn {
+  background: #4a9eff;
+  color: white;
+}
+
+.create-btn:hover:not(:disabled) {
+  background: #3d8ce6;
+}
+
+.create-btn:disabled,
+.cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-sub-prd-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .create-sub-prd-header {
+    padding: 12px 16px;
+  }
+  
+  .create-sub-prd-form {
+    padding: 16px;
+  }
+  
+  .features-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .sub-prd-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn,
+  .create-btn {
+    width: 100%;
+  }
+}

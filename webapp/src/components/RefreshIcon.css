@@ -1,0 +1,73 @@
+.refresh-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #666;
+}
+
+.refresh-icon-button:hover {
+  background-color: rgba(255, 165, 0, 0.1);
+  color: #ff6b35;
+  transform: scale(1.05);
+}
+
+.refresh-icon-button:active {
+  transform: scale(0.95);
+}
+
+.refresh-icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.refresh-icon-svg {
+  transition: transform 0.2s ease;
+}
+
+.refresh-icon-button.refreshing .refresh-icon-svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark theme support */
+.refresh-icon-button {
+  color: #ccc;
+}
+
+.refresh-icon-button:hover {
+  color: #ff6b35;
+}
+
+/* Size variants */
+.refresh-icon-button.small {
+  padding: 2px;
+}
+
+.refresh-icon-button.large {
+  padding: 8px;
+}
+
+/* Integration with existing components */
+.feature-card .refresh-icon-button,
+.content-node .refresh-icon-button {
+  margin-left: 8px;
+}
+
+.refresh-icon-button.inline {
+  margin: 0 4px;
+  vertical-align: middle;
+}

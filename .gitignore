@@ -1,0 +1,49 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+logs
+*.log
+
+# Build output
+app.asar
+app.asar.unpacked
+extracted/
+dist/
+out/
+
+# Dependencies
+node_modules/
+
+# Other
+app-update.yml
+sentry.properties
+*.local
+
+# Debug and test files
+debug-*.html
+test-*.html
+setup-*.html
+console-debug.js
+browser-*.js
+check-*.js
+add-*.js
+clean-*.js
+create-*.js
+debug-*.js
+proxy-server.js
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Cache directories
+.vite/
+.million/

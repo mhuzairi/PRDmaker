@@ -1,0 +1,188 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ReactFlow Controls Styling */
+.react-flow__controls {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  bottom: 30px !important;
+}
+
+.react-flow__controls-button {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.react-flow__controls-button:hover {
+  background: rgba(0, 122, 255, 0.1);
+  color: #007AFF;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none;
+}
+
+.react-flow__controls-button svg {
+  display: none;
+}
+
+/* Specific styling for zoom in button */
+.react-flow__controls-zoomin {
+  position: relative;
+}
+
+.react-flow__controls-zoomin::before {
+  content: '+';
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.react-flow__controls-zoomin:hover::before {
+  color: #007AFF;
+}
+
+/* Specific styling for zoom out button */
+.react-flow__controls-zoomout::before {
+  content: '−';
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.react-flow__controls-zoomout:hover::before {
+  color: #007AFF;
+}
+
+/* Specific styling for fit view button */
+.react-flow__controls-fitview::before {
+  content: '⊞';
+  font-size: 16px;
+  color: #333;
+}
+
+.react-flow__controls-fitview:hover::before {
+  color: #007AFF;
+}
+
+/* Interactive button - unlocked state */
+.react-flow__controls-interactive::before {
+  content: '🔑';
+  font-size: 14px;
+}
+
+/* Interactive button - locked state */
+.react-flow__controls-interactive.locked::before {
+  content: '🔒';
+  font-size: 14px;
+}
+
+/* ReactFlow MiniMap Styling */
+.react-flow__minimap {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  bottom: 30px !important;
+  right: 20px !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.react-flow__minimap-mask {
+  fill: rgba(128, 128, 128, 0.1) !important;
+  stroke: #666666 !important;
+  stroke-width: 2 !important;
+}
+
+.react-flow__minimap-node {
+  fill: rgba(128, 128, 128, 0.6) !important;
+  stroke: #666666 !important;
+  stroke-width: 1 !important;
+}
+
+.react-flow__minimap svg {
+  border-radius: 12px;
+}
+
+/* NodeResizer Styling - Remove blue border */
+.react-flow__resize-control {
+  border: none !important;
+  background: transparent !important;
+}
+
+.react-flow__resize-control.line {
+  border: none !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.react-flow__resize-control.handle {
+  border: 2px solid rgba(255, 255, 255, 0.8) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 3px !important;
+}
+
+.react-flow__resize-control.handle:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-color: rgba(255, 255, 255, 1) !important;
+}
+

@@ -1,0 +1,366 @@
+/* Card Node Styles */
+.card-node {
+  min-width: 500px;
+  min-height: 400px;
+  background: #2d2d2d;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card-node.selected {
+  box-shadow: 0 4px 20px rgba(255, 140, 0, 0.4);
+}
+
+/* Node Header */
+.card-node .node-header {
+  background: #3a3a3a;
+  border-bottom: 1px solid #404040;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.card-node .window-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.card-node .control-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card-node .control-button.close {
+  background: #ff5f57;
+}
+
+.card-node .control-button.minimize {
+  background: #ffbd2e;
+}
+
+.card-node .control-button.maximize {
+  background: #28ca42;
+}
+
+.card-node .window-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.card-node .header-actions {
+  display: flex;
+  gap: 2px;
+}
+
+.card-node .header-btn {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #e0e0e0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-node .header-btn:hover {
+  background: #4a4a4a;
+  transform: scale(1.1);
+}
+
+.card-node .add-btn {
+  color: #ff8c00;
+}
+
+.card-node .add-btn:hover {
+  background: rgba(255, 140, 0, 0.1);
+  color: #ffa500;
+}
+
+.card-node .collapse-btn {
+  color: #888;
+  font-size: 14px;
+  min-width: 24px;
+  height: 24px;
+}
+
+.card-node .collapse-btn:hover {
+  background: rgba(136, 136, 136, 0.1);
+  color: #aaa;
+}
+
+/* Cards Container */
+.cards-container {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Tech Cards */
+.tech-card {
+  background: #3a3a3a;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-card:hover {
+  border-color: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.category-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.remove-card-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.remove-card-btn:hover {
+  background: #ff4444;
+  color: white;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 11px;
+  color: #b0b0b0;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Add Card Form */
+.add-card-form {
+  background: #404040;
+  border: 2px dashed #ff8c00;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+}
+
+.card-input,
+.card-textarea,
+.card-select {
+  background: #2d2d2d;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 6px 8px;
+  color: #e0e0e0;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.card-input:focus,
+.card-textarea:focus,
+.card-select:focus {
+  border-color: #ff8c00;
+}
+
+.card-textarea {
+  resize: none;
+  font-family: inherit;
+}
+
+.card-select {
+  cursor: pointer;
+}
+
+.card-select option {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.add-btn-confirm,
+.cancel-btn {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-btn-confirm {
+  background: #ff8c00;
+  color: white;
+}
+
+.add-btn-confirm:hover {
+  background: #ffa500;
+  transform: translateY(-1px);
+}
+
+.cancel-btn {
+  background: #555;
+  color: #e0e0e0;
+}
+
+.cancel-btn:hover {
+  background: #666;
+}
+
+/* Add Card Placeholder */
+.add-card-placeholder {
+  background: #3a3a3a;
+  border: 2px dashed #ff8c00;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #ff8c00;
+  min-height: 80px;
+}
+
+.add-card-placeholder:hover {
+  background: rgba(255, 140, 0, 0.1);
+  border-color: #ffa500;
+  transform: translateY(-2px);
+}
+
+.add-icon {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.add-card-placeholder span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Handle Styles - Dedicated Connection Areas */
+.card-node .node-handle {
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 140, 0, 0.3);
+  border: 2px solid rgba(255, 140, 0, 0.6);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.card-node .node-handle:hover {
+  background: rgba(255, 140, 0, 0.7);
+  border-color: #ff8c00;
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+}
+
+.card-node.selected .node-handle {
+  background: rgba(255, 140, 0, 0.5);
+  border-color: #ff8c00;
+}
+
+.card-node.selected .node-handle:hover {
+  background: #ff8c00;
+  transform: scale(1.4);
+  box-shadow: 0 0 12px rgba(255, 140, 0, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-node {
+    width: 350px;
+  }
+}
+
+/* Animation for new cards */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tech-card {
+  animation: cardSlideIn 0.3s ease-out;
+}
